@@ -831,7 +831,7 @@ build_configs:
         architectures:
           arm: *arm_arch
           arm64: *arm64_arch
-          x86_64: 
+          x86_64:
             <<: *x86_64_arch
             fragments: [x86_4.19.y_cip]
 
@@ -919,10 +919,11 @@ build_configs:
           riscv: *riscv_defconfig
           x86_64: &x86_64_defconfig-staging
             <<: *x86_64_defconfig
-            fragments: [x86-chromebook, crypto]
+            fragments: [x86-chromebook, crypto, ima]
             extra_configs:
               - x86_64_defconfig+x86-chromebook+kselftest
               - x86_64_defconfig+x86-chromebook+crypto
+              - x86_64_defconfig+x86-chromebook+ima
       clang-10: &staging_clang
         build_environment: clang-10
         fragments: [kselftest]
