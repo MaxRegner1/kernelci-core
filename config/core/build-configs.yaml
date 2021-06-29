@@ -177,6 +177,35 @@ fragments:
       - 'CONFIG_VIDEO_VIVID=y'
       - 'CONFIG_VIDEO_VIVID_MAX_DEVS=64'
 
+  x86_4.19.y_cip:
+    path: "kernel/configs/cip.config"
+    configs:
+      - "CONFIG_EFI_STUB=y"
+      - "CONFIG_NF_TABLES=y"
+      - "CONFIG_NF_TABLES_INET=y"
+      - "CONFIG_NF_TABLES_NETDEV=y"
+      - "CONFIG_NFT_CT=y"
+      - "CONFIG_NFT_COUNTER=y"
+      - "CONFIG_NFT_LOG=y"
+      - "CONFIG_NFT_LIMIT=y"
+      - "CONFIG_NFT_MASQ=y"
+      - "CONFIG_NFT_REDIR=y"
+      - "CONFIG_NFT_NAT=y"
+      - "CONFIG_NFT_REJECT=y"
+      - "CONFIG_NFT_COMPAT=y"
+      - "CONFIG_NFT_HASH=y"
+      - "CONFIG_NFT_CHAIN_ROUTE_IPV4=y"
+      - "CONFIG_NFT_CHAIN_NAT_IPV4=m"
+      - "CONFIG_NFT_MASQ_IPV4=m"
+      - "CONFIG_NFT_CHAIN_ROUTE_IPV6=y"
+      - "CONFIG_VIRTIO_BLK=y"
+      - "CONFIG_BLK_DEV_SR_VENDOR=y"
+      - "CONFIG_VIRTIO_NET=y"
+      - "CONFIG_VGACON_SOFT_SCROLLBACK=y"
+      - "CONFIG_VIRTIO_PCI=y"
+      - "CONFIG_VIRTIO_BALLOON=y"
+      - "CONFIG_FUSE_FS=m"
+
   x86-chromebook:
     path: "kernel/configs/x86-chromebook.config"
     configs:
@@ -724,7 +753,9 @@ build_configs:
         architectures:
           arm: *arm_arch
           arm64: *arm64_arch
-          x86_64: *x86_64_arch
+          x86_64: 
+            <<: *x86_64_arch
+            fragments: [x86_4.19.y_cip]
 
   cip_4.19-rt:
     tree: cip
