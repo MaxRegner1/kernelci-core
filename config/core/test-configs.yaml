@@ -1640,6 +1640,14 @@ device_types:
             - 'tinyconfig'
             - 'kvm_guest.config'
 
+  xilinx-zcu102:
+    mach: zynq
+    class: arm64-dtb
+    boot_method: uboot
+    filters:
+      - blocklist: *allmodconfig_filter
+      - blocklist: {defconfig: ['multi_v7_defconfig']}
+
   zynq-zc702:
     mach: zynq
     class: arm-dtb
@@ -2521,6 +2529,10 @@ test_configs:
     test_plans:
       - baseline
       - baseline-nfs
+
+  - device_type: xilinx-zcu102
+    test_plans:
+      - baseline
 
   - device_type: zynq-zc702
     test_plans:
