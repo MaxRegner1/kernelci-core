@@ -1667,6 +1667,11 @@ device_types:
       - blocklist: *allmodconfig_filter
       - blocklist: {defconfig: ['multi_v7_defconfig+linaro-base+distribution']}
 
+  zynqmp-zcu102:
+    mach: zynq
+    class: arm64-dtb
+    boot_method: uboot
+
 
 test_configs:
 
@@ -2565,5 +2570,9 @@ test_configs:
       - baseline-nfs
 
   - device_type: zynq-zc702
+    test_plans:
+      - baseline
+
+  - device_type: zynqmp-zcu102
     test_plans:
       - baseline
