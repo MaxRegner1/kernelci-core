@@ -48,6 +48,11 @@ cd testcases/open_posix_testsuite/ && make generate-makefiles
 make all
 mkdir /opt/openposix_testsuite/bin -p
 make install
+
+# Make sure openposix_testsuite placed under /opt/ltp
+mv /opt/openposix_testsuite/bin/* /opt/ltp/bin/
+rmdir /opt/openposix_testsuite/bin
+mv /opt/openposix_testsuite/* /opt/ltp/
 ########################################################################
 # Cleanup: remove files and packages we don't want in the images       #
 ########################################################################
