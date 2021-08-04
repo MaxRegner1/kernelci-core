@@ -326,6 +326,9 @@ test_plans:
     params:
       sleep_params: mem
 
+  smc:
+    rootfs: buildroot_baseline_ramdisk
+
   usb:
     rootfs: debian_buster_ramdisk
 
@@ -1814,6 +1817,7 @@ test_configs:
       - ltp-pty
       - ltp-timers
       - sleep_mem
+      - smc
 
   - device_type: at91-sama5d2_xplained
     test_plans:
@@ -1940,6 +1944,7 @@ test_configs:
       - ltp-pty
       - ltp-timers
       - sleep
+      - smc
 
   - device_type: hp-x360-12b-n4000-octopus
     test_plans:
@@ -1954,6 +1959,7 @@ test_configs:
       - ltp-ipc
       - ltp-mm
       - sleep_mem
+      - smc
 
   - device_type: hsdk
     test_plans:
@@ -2288,6 +2294,7 @@ test_configs:
     test_plans:
       - baseline_qemu
       - baseline-qemu-docker
+      - smc
       - v4l2-compliance-vivid
 
   - device_type: qemu_arm-virt-gicv3-uefi
@@ -2306,6 +2313,7 @@ test_configs:
     test_plans:
       - baseline_qemu
       - baseline-qemu-docker
+      - smc
       - v4l2-compliance-vivid
 
   - device_type: qemu_arm64-virt-gicv3-uefi
@@ -2329,6 +2337,7 @@ test_configs:
     test_plans:
       - baseline_qemu
       - baseline-qemu-docker
+      - smc
       - v4l2-compliance-vivid
 
   - device_type: qemu_x86_64-uefi
@@ -2403,6 +2412,7 @@ test_configs:
       - ltp-pty
       - ltp-timers
       - sleep
+      - smc
       - v4l2-compliance-uvc
 
   - device_type: rk3399-gru-kevin
