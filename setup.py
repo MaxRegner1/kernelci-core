@@ -19,7 +19,7 @@ import setuptools
 import kernelci
 
 setuptools.setup(
-    name='kernelci',
+    name='MR Linux',
     version=kernelci.__version__,
     description="KernelCI core functions",
     author="kernelci.org",
