@@ -1,4 +1,4 @@
-{{- $architecture := or .architecture "arm64" -}}
+{{- $architecture := or .architecture "amd64" -}}
 {{- $basename := or .basename "." -}}
 {{- $extra_packages := or .extra_packages "" -}}
 {{- $suite := or .suite "stretch" -}}
