@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:11.5
 
 RUN apt-get update && \
 	apt-get install --yes --no-install-recommends \
